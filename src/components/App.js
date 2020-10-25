@@ -27,7 +27,7 @@ class App extends Component {
       );
   }
   move(event) {
-    if (event.keyCode === 39 && this.state.renderBall === true) {
+    if (event.keyCode === 39) {
       let temp = this.state.ballPosition.left.replace("px", "");
       this.setState({ ballPosition: { left: parseInt(temp) + 5 + "px" } });
     }
@@ -35,7 +35,7 @@ class App extends Component {
 
   //bind ArrowRight keydown event
   componentDidMount() {
-    window.addEventListener("keydown", this.move);
+    document.addEventListener("keydown", this.move);
   }
 
   render() {
